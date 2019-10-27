@@ -22,7 +22,7 @@ vagrant up
 
 You'll be prompted for password about NFS share and adding the hostname and IP to your `hosts` file.
 
-Head to http://wazo.vagrant
+Head to https://wazo.vagrant
 
 ## Next
 
