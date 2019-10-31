@@ -3,8 +3,8 @@
 set -xe
 
 ANSIBLE_VERSION=2.7.9
-BRANCH=wazo-19.12.1
-DISTRIBUTION=pelican-stretch
+BRANCH=wazo-19.14
+DISTRIBUTION=pelican-buster
 
 # Requirements
 # coreutils = tee
@@ -36,6 +36,7 @@ sed -i 's;^# uc-engine-host;uc-engine-host;' inventories/uc-engine
 echo "wazo_distribution = $DISTRIBUTION" >> inventories/uc-engine
 echo "wazo_distribution_upgrade = $DISTRIBUTION" >> inventories/uc-engine
 echo "engine_api_configure_wizard = true" >> inventories/uc-engine
+echo "engine_api_root_password = wazo" >> inventories/uc-engine
 # sudo mkdir -p /root/.config/wazo-auth-cli # BUGFIX
 # sudo mkdir -p /var/www/html # BUGFIX
 # sudo chown -R www-data:www-data /var/www/html # BUGFIX

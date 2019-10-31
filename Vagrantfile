@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "debian/stretch64"
+  config.vm.box = "debian/buster64"
   
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "2048"
@@ -14,7 +14,10 @@ Vagrant.configure(2) do |config|
     libvirt.cpus = "2"
   end
 
-  config.vm.hostname = 'wazo.vagrant'
+  config.vm.network "public_network",
+    use_dhcp_assigned_default_route: true
+  config.vm.hostname = "wazo.vagrant"
+
   if Vagrant.has_plugin?("vagrant-hostmanager")
     config.hostmanager.enabled = true
     config.hostmanager.manage_host = true
