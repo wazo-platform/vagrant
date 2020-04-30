@@ -31,8 +31,8 @@ git checkout "$BRANCH"
 ansible-galaxy install -r requirements-postgresql.yml -p roles
 
 # Configuration
-sed -i 's;^# \[uc-ui:children\];[uc-ui:children];' inventories/uc-engine
-sed -i 's;^# uc-engine-host;uc-engine-host;' inventories/uc-engine
+sed -i 's;^# \[uc_ui:children\];[uc_ui:children];' inventories/uc-engine
+sed -i 's;^# uc_engine_host;uc_engine_host;' inventories/uc-engine
 echo "wazo_distribution = $DISTRIBUTION" >> inventories/uc-engine
 echo "wazo_distribution_upgrade = $DISTRIBUTION" >> inventories/uc-engine
 echo "engine_api_configure_wizard = true" >> inventories/uc-engine
